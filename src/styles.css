@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.cloud{
+    color: white;
+    filter: drop-shadow(1px 1px 5px white);
+    
+}
+body{
+    background-color: black;
+}
