@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 .cloud{
     color: white;
     filter: drop-shadow(1px 1px 5px white);
     
 }
-body{
-    background-color: black;
+ body{
+    background-color: #EBF0FA;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
 }

@@ -4,7 +4,7 @@
     width: 400px;
     height: 420px;
     background: rgb(0,0,0);
-    background: linear-gradient(190deg, rgb(0,0,0,1) 0%, rgb(8,7,42,1));
+    background: linear-gradient(190deg, pink, teal);
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -1,0 +1,21 @@
+:root{
+    --lt-gray: #ddd;
+    --background-dark: #512DA8;
+    --background-light: #9575CD;
+    --background-pale: #D1C4E9;
+    --background-moredark: #4527A0;
+    
+    }
+    .jumbotron {
+        background: #9575CD;
+        margin:0;
+        padding: 70px 30px;
+        color:floralwhite;
+        min-height: 150px;
+    }
+    .active{
+            background: #9575CD;
+    }
+    .img-size{
+        font-size: x-large;
+    }

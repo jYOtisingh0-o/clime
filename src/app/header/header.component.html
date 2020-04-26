@@ -1,19 +1,29 @@
-<div>
+<mat-toolbar color = "primary">
     <span>Clime`</span>
-</div>
-<div>
+</mat-toolbar>
+<mat-toolbar color = "primary" class="links">
     <span><i class="fas fa-3x fa-cloud cloud"></i></span>
-    <a routerLink = './home' routerLinkActive = 'active' ><span></span>Home</a>
-    <a routerLink = './about' routerLinkActive = 'active'><span></span>About</a>
-    <a href="#"><span></span>Contact us</a>
-    <a href="#"><span></span>Login</a>
-</div>
-<div>
-    <div>
+    <a mat-button routerLink = './home' routerLinkActive = 'active' ><span></span>Home</a>
+    <a mat-button routerLink = './about' routerLinkActive = 'active'><span></span>About</a>
+    <a mat-button href="#"><span></span>Contact us</a>
+    <span class="flex-spacer"></span>
+    <a mat-button href="#"><span class="fa fa-sign-in fa-lg"></span>Login</a>
+</mat-toolbar>
+
+<div class="container jumbotron"
+fxLayout="row"
+fxLayout.sm="column" 
+fxLayout.xs="column" 
+fxLayoutAlign.xs="start center"
+fxLayoutAlign.sm="start center" 
+fxLayoutAlign.gt-sm="center center" 
+fxLayoutGap="10px">
+
+    <div fxFlex fxFlex.gt-sm="50%">
         <h1>Clime</h1>
         <p>We measure to serve!, We take inspiration from bla bla bla</p>
     </div>
-    <div>
+    <div  fxFlex fxFlex.gt-sm="20%" class="img-size">
         <i class="fas fa-3x fa-cloud cloud"></i>
     </div>
 </div>
