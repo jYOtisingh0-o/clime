@@ -4,7 +4,7 @@
     width: 400px;
     height: 420px;
     background: rgb(0,0,0);
-    background: linear-gradient(190deg, pink, teal);
+    background: linear-gradient(190deg, pink, #512DA8);
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -34,6 +34,16 @@
 }
 .cloudDiv{
     margin-top: -40px;
+}
+.button button{
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: #512DA8;
+    color: white;
+    
+}
+.active{
+    background: #9575CD;
 }
 @keyframes cloudMovement{
     from{margin-left: -55px;}

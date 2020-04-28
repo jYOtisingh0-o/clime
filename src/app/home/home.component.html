@@ -1,3 +1,10 @@
+<div fxFlex>
+    <div >
+        <input type ="text" placeholder="Want to search for specific city?"> 
+        <span class="button"><button mat-button >search</button></span>    
+</div>
+
+
 <div class="container"
      fxLayout="row"
      fxLayout.sm="column"
@@ -7,21 +14,22 @@
 
      <mat-card fxFlex>
     <div id="divWeatherMain">
-        <div class="weatherrow" *ngIf = "weatherData.isDay">
+        <div class="weatherrow" *ngIf = " WEATHERDATA.isDay">
             <i class="fas fa-3x fa-sun sun"></i>
         </div>
-        <div class="weatherrow"  *ngIf = "!weatherData.isDay">
+        <div class="weatherrow"  *ngIf = "! WEATHERDATA.isDay">
             <i class="fas fa-3x fa-moon moon"></i>
         </div>
         <div class="weatherrow cloudDiv">
             <i class="fas fa-3x fa-cloud cloud"></i>
         </div>
-        <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{weatherData.temp_celcius}}° </div>
-        <div class="weatherrow" style="font-size: 12px;"> {{weatherData.temp_min}} ° / {{weatherData.temp_max}} ° </div>
-        <div class="weatherrow" style="font-size: 12px;"> Feels like: {{weatherData.temp_feels_like}} ° </div>
-        <div class="weatherrow" style="font-size: 25px; margin-top: 10px;"> {{weatherData.name}} </div>
-        <div class="weatherrow" style="font-size: 12px;">Humidity: {{weatherData.main.humidity}}% </div>
+        <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{ WEATHERDATA.temp_celcius}}° </div>
+        <div class="weatherrow" style="font-size: 12px;"> {{ WEATHERDATA.temp_min}} ° / {{ WEATHERDATA.temp_max}} ° </div>
+        <div class="weatherrow" style="font-size: 12px;"> Feels like: {{ WEATHERDATA.temp_feels_like}} ° </div>
+        <div class="weatherrow" style="font-size: 25px; margin-top: 10px;"> {{ WEATHERDATA.name}} </div>
+        <div class="weatherrow" style="font-size: 12px;">Humidity: {{ WEATHERDATA.main.humidity}}% </div>
     
     </div>
     </mat-card>
+</div>
 </div>
