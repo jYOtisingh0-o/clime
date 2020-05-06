@@ -6,9 +6,32 @@
     
 }
  body{
-    background-color: #EBF0FA;
-    font-family: sans-serif;
+     background-image: url("./assets/jeremy-bishop-GNgB1KtBRJM-unsplash.jpg");
+     background-repeat: no-repeat;
+     background-image: cross-fade(0.6);
+     background-size: cover;
+     -o-background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
 }
-a{
+a, button, input{
     text-decoration: none;
+    outline: 0 none;
+}
+a:hover{
+    text-decoration-color: white;
+}
+button{
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: #512DA8;
+    color: white;
+    outline: 0 none;
+}
+input{
+    opacity: 0.5;
+    text-align: center;
+    border-radius: 1.5pt;
+    border-style: none;
+    padding:6px;
 }

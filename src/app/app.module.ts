@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { TodayComponent } from './today/today.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +35,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    TodayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    HttpClientModule,
+    ReactiveFormsModule,
     
     MatToolbarModule,
     FlexLayoutModule,

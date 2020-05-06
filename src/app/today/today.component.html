@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <form
+          [formGroup]="weatherSearchForm"
+          (ngSubmit)="sendtoService(weatherSearchForm.value)">
+      <input calss="form-control"
+      type="text"
+      id="weatherlat"
+      placeholder="Enter latitude"
+      formControlName="lat"/>
+      
+      <input calss="form-control"
+      type="text"
+      id="weatherlat"
+      placeholder="Enter longitude"
+      formControlName="lon"/>
+      <span class="button"><button mat-button  class="btn btn-success btn-md"> Search for weather</button></span> 
+  </form>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+
+      <div  fxLayout="row"
+      fxLayout.sm="column"
+      fxLayout.xs="column"
+      fxLayoutAlign.gt-md="space-around center"
+      fxLayoutGap="10px">
+      <div id="divWeatherMain">
+          <div class="weatherrow cloudDiv">
+              <i class="fas fa-3x fa-cloud cloud"></i>
+          </div>
+          <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{(weatherData.main.temp -273.15).toFixed(0)}}° </div>
+          <div class="weatherrow" style="font-size: 12px;"> {{(weatherData.main.temp_min -273.15).toFixed(0)}} ° / {{(weatherData.main.temp_max -273.15).toFixed(0)}} ° </div>
+          <div class="weatherrow" style="font-size: 12px;"> Feels like: {{(weatherData.main.feels_like -273.15).toFixed(0)}} ° </div>
+          <div class="weatherrow" style="font-size: 25px; margin-top: 10px;"> {{weatherData.name}} </div>
+          <div class="weatherrow" style="font-size: 12px;">Humidity: {{weatherData.main.humidity}}% </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -19,3 +19,8 @@
     .img-size{
         font-size: x-large;
     }
+
+    .container-fluid{
+        background-color:grey;
+        opacity: 0.7;
+    }

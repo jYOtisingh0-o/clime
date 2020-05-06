@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService} from '../services/weather.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +8,56 @@ import { WeatherService} from '../services/weather.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  WEATHERDATA: any;
-  constructor(public weatherService: WeatherService) { }
+
+  //test code
+  public weatherSearchForm:FormGroup;
+  public weatherData: any;
+  //test code ends
+  formValues:any;
+  constructor( private formBuilder: FormBuilder,
+     private weatherService: WeatherService ) { }
 
   ngOnInit(): void {
-    this.WEATHERDATA=this.weatherService.weatherData={
+    //test code
+    this.weatherSearchForm = this.formBuilder.group({
+      location:[""]
+    });
+    //test code ends
+    this.weatherData={
       main:{},
       isDay:true
-    }
-    this.weatherService.getWeatherData();
-   // console.log(this.weatherData);
+     }
+    this.getWeatherData();
+    console.log(this.weatherData);
   }
- 
-}
+
+//test code
+  sendToService(formValues){
+    this.weatherService.getWeather(formValues.location).subscribe(data=>{
+      this.weatherData = data;
+      console.log(this.weatherData);
+    });
+  }
+//test code ends
+
+
+  getWeatherData(){
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=e973ee11c9e475320e79113b372aa0a4')
+    .then(response => response.json())
+    .then(data=>{this.setWeatherData(data);})
+    
+  }
+
+  setWeatherData(data){
+    this.weatherData = data;
+    let sunsetTime = new Date(this.weatherData.sys.sunset*1000);
+    this.weatherData.sunset_time = sunsetTime.toLocaleTimeString();
+    let currentDate = new Date();
+    this.weatherData.isDay = (currentDate.getTime()< sunsetTime.getTime());
+    this.weatherData.temp_celcius = (this.weatherData.main.temp -273.15).toFixed(0);
+    this.weatherData.temp_min = (this.weatherData.main.temp_min -273.15).toFixed(0);
+    this.weatherData.temp_max = (this.weatherData.main.temp_max -273.15).toFixed(0);
+    this.weatherData.temp_feels_like = (this.weatherData.main.feels_like -273.15).toFixed(0);
+  }
+  }
+
