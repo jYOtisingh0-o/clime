@@ -32,6 +32,8 @@
           <div class="weatherrow cloudDiv">
               <i class="fas fa-3x fa-cloud cloud"></i>
           </div>
+          <img src="{{iconurl}}" class="img-fluid" class="icon-center">
+          <div class="weatherrow" style="font-size: 27px; margin-top: 5px;"> {{weatherData.weather[0].description}} </div>
           <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{(weatherData.main.temp -273.15).toFixed(0)}}° </div>
           <div class="weatherrow" style="font-size: 12px;"> {{(weatherData.main.temp_min -273.15).toFixed(0)}} ° / {{(weatherData.main.temp_max -273.15).toFixed(0)}} ° </div>
           <div class="weatherrow" style="font-size: 12px;"> Feels like: {{(weatherData.main.feels_like -273.15).toFixed(0)}} ° </div>

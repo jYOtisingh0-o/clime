@@ -9,7 +9,7 @@ export class WeatherService {
   constructor(private http: HttpClient ){}
   //test-code
   getWeather(location){
-    return this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+location+'&appid='+ this.apikey);
+    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q='+location+'&appid='+ this.apikey);
   }
   //test-code ends
 }

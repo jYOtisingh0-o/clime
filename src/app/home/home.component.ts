@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   //test code
   public weatherSearchForm:FormGroup;
   public weatherData: any;
+  public iconurl:any;
+  public description:any;
   //test code ends
   formValues:any;
   constructor( private formBuilder: FormBuilder,
@@ -58,6 +60,9 @@ export class HomeComponent implements OnInit {
     this.weatherData.temp_min = (this.weatherData.main.temp_min -273.15).toFixed(0);
     this.weatherData.temp_max = (this.weatherData.main.temp_max -273.15).toFixed(0);
     this.weatherData.temp_feels_like = (this.weatherData.main.feels_like -273.15).toFixed(0);
+    // this.weatherData.icon =this.weatherData.weather[0].icon;
+    this.iconurl = "http://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
+    this.description= this.weatherData.weather[0].description;
   }
   }
 
