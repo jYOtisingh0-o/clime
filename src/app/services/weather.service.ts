@@ -11,6 +11,5 @@ export class WeatherService {
   getWeather(location){
     return this.http.get('https://api.openweathermap.org/data/2.5/weather?q='+location+'&appid='+ this.apikey);
   }
-  //test-code ends
 }
 

@@ -22,7 +22,6 @@ export class TodayComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-
       this.weatherSearchForm = this.formBuilder.group({
         lat:[""],
         lon:[""]
@@ -34,20 +33,20 @@ export class TodayComponent implements OnInit {
      }
     this.getWeatherData();
     console.log(this.weatherData);
-  
-  }
-
-  
+  }  
 sendtoService(formValues){
   this.weathercoordService.getWeather(formValues.lat, formValues.lon).subscribe(data=>{
     this.weatherData=data;
     console.log(this.weatherData);
+    this.iconurl= "https://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
+    this.description=this.weatherData.weather[0].description;
+  
   });
 }
 
 
 getWeatherData(){
-  fetch('http://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=e973ee11c9e475320e79113b372aa0a4')
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=e973ee11c9e475320e79113b372aa0a4')
   .then(response => response.json())
   .then(data=>{this.setWeatherData(data);})  
 }
@@ -62,9 +61,8 @@ setWeatherData(data){
   this.weatherData.temp_min = (this.weatherData.main.temp_min -273.15).toFixed(0);
   this.weatherData.temp_max = (this.weatherData.main.temp_max -273.15).toFixed(0);
   this.weatherData.temp_feels_like = (this.weatherData.main.feels_like -273.15).toFixed(0);
-  //this.weatherData.icon =this.weatherData.weather[0].icon;
-  this.iconurl = "http://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
-  this.weatherData.description = this.weatherData.weather[0].description;
+  this.iconurl = "https://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
+  this.description = this.weatherData.weather[0].description;
 }
  
 }

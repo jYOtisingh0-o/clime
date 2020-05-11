@@ -1,5 +1,4 @@
 #divWeatherMain{
-    /* background-image: url("../../assets/kristi-martin--c017F-rzew-unsplash.jpg"); */
     display:block;
     opacity: 0.9;
     background-size: cover;
@@ -10,13 +9,15 @@
     height: auto;
     width: auto;
     min-width: 420px;
-    /* background: rgb(0,0,0); */
     background: linear-gradient(190deg, pink, #512DA8);
     color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 90px;
     box-shadow: 3px 3px 5px  #1A1A1A;
 }
+/* input{
+    max-width: 400px;
+    margin-top: 6px;
+} */
 .weatherrow{
     display: block;
     margin: 0 auto;
@@ -36,17 +37,13 @@
     margin: auto;
 }
 .img-fluid {
-    max-width: 100%;
+    max-width: 90%;
+    min-width: 70%;
     height: auto;
+    size: 300px;
   }
 .active{
     background: #9575CD;
     text-decoration: none;
 }
-@keyframes cloudMovement{
-    from{margin-left: -55px;}
-    to{ margin-left: 65px;}
-}
-input{
-    margin-top: 6px;
-}
+

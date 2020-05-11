@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2bd2a243-79c5-4750-96fe-7a67ef2f15f5/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/clime-aWeatherApp",
+    "appService.deploySubpath": ""
+}

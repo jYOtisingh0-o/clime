@@ -15,7 +15,7 @@
       id="weatherlat"
       placeholder="Enter longitude"
       formControlName="lon"/>
-      <span class="button"><button mat-button  class="btn btn-success btn-md"> Search for weather</button></span> 
+      <span class="button"><button mat-button > Search for weather</button></span> 
   </form>
   </div>
   </div>
@@ -32,14 +32,16 @@
           <div class="weatherrow cloudDiv">
               <i class="fas fa-3x fa-cloud cloud"></i>
           </div>
-          <img src="{{iconurl}}" class="img-fluid" class="icon-center">
-          <div class="weatherrow" style="font-size: 27px; margin-top: 5px;"> {{weatherData.weather[0].description}} </div>
-          <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{(weatherData.main.temp -273.15).toFixed(0)}}° </div>
-          <div class="weatherrow" style="font-size: 12px;"> {{(weatherData.main.temp_min -273.15).toFixed(0)}} ° / {{(weatherData.main.temp_max -273.15).toFixed(0)}} ° </div>
-          <div class="weatherrow" style="font-size: 12px;"> Feels like: {{(weatherData.main.feels_like -273.15).toFixed(0)}} ° </div>
-          <div class="weatherrow" style="font-size: 25px; margin-top: 10px;"> {{weatherData.name}} </div>
-          <div class="weatherrow" style="font-size: 12px;">Humidity: {{weatherData.main.humidity}}% </div>
-      </div>
+          <div *ngIf="weatherData">
+            <img src="{{iconurl}}" class="img-fluid" class="icon-center">
+            <div class="weatherrow" style="font-size: 27px; margin-top: 5px;"> {{description}} </div>
+            <div class="weatherrow" style="font-size: 32px; margin-top: 5px;"> {{(weatherData.main.temp -273.15).toFixed(0)}}° </div>
+            <div class="weatherrow" style="font-size: 12px;"> {{(weatherData.main.temp_min -273.15).toFixed(0)}} ° / {{(weatherData.main.temp_max -273.15).toFixed(0)}} ° </div>
+            <div class="weatherrow" style="font-size: 12px;"> Feels like: {{(weatherData.main.feels_like -273.15).toFixed(0)}} ° </div>
+            <div class="weatherrow" style="font-size: 25px; margin-top: 10px;"> {{weatherData.name}} </div>
+            <div class="weatherrow" style="font-size: 12px;">Humidity: {{weatherData.main.humidity}}% </div>
+          </div>
+        </div>
       </div>
   </div>
 </div>

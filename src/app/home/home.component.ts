@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   public weatherSearchForm:FormGroup;
   public weatherData: any;
   public iconurl:any;
+  public iconCode:any;
   public description:any;
   //test code ends
   formValues:any;
@@ -38,18 +39,17 @@ export class HomeComponent implements OnInit {
     this.weatherService.getWeather(formValues.location).subscribe(data=>{
       this.weatherData = data;
       console.log(this.weatherData);
+      this.iconCode=this.weatherData.weather[0].icon;
+      this.iconurl='https://openweathermap.org/img/wn/'+this.iconCode+'@2x.png';
+      this.description = this.weatherData.weather[0].description;
     });
   }
 //test code ends
-
-
   getWeatherData(){
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=e973ee11c9e475320e79113b372aa0a4')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=e973ee11c9e475320e79113b372aa0a4')
     .then(response => response.json())
-    .then(data=>{this.setWeatherData(data);})
-    
+    .then(data=>{this.setWeatherData(data);})    
   }
-
   setWeatherData(data){
     this.weatherData = data;
     let sunsetTime = new Date(this.weatherData.sys.sunset*1000);
@@ -60,9 +60,8 @@ export class HomeComponent implements OnInit {
     this.weatherData.temp_min = (this.weatherData.main.temp_min -273.15).toFixed(0);
     this.weatherData.temp_max = (this.weatherData.main.temp_max -273.15).toFixed(0);
     this.weatherData.temp_feels_like = (this.weatherData.main.feels_like -273.15).toFixed(0);
-    // this.weatherData.icon =this.weatherData.weather[0].icon;
-    this.iconurl = "http://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
-    this.description= this.weatherData.weather[0].description;
+    this.iconurl = "https://openweathermap.org/img/w/" + this.weatherData.weather[0].icon + ".png";
+   this.description= this.weatherData.weather[0].description;
   }
   }
 

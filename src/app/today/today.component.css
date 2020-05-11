@@ -1,12 +1,27 @@
+#divWeatherMain{
+    display:block;
+    opacity: 0.9;
+    background-size: cover;
+    border-radius:10px;
+    padding-top: 12px;
+    padding-bottom: 42px;
+    min-height: 500px;
+    height: auto;
+    width: auto;
+    min-width: 420px;
+    background: linear-gradient(190deg, pink, #512DA8);
+    color:white;
+    margin-bottom: 90px;
+    box-shadow: 3px 3px 5px  #1A1A1A;
+} 
+button{
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: #512DA8;
+    color: white;
+    outline: 0 none;  
+}
 
-    button{
-        margin-top: 9px;
-        margin-bottom: 9px;
-        background-color: #512DA8;
-        color: white;
-        outline: 0 none;  
-    }
- 
     .weatherrow{
         display: block;
         margin: 0 auto;
@@ -16,26 +31,6 @@
         background: #9575CD;
         text-decoration: none;
     }
-    @keyframes cloudMovement{
-        from{margin-left: -55px;}
-        to{ margin-left: 65px;}
-    }
-    #divWeatherMain{
-        display:block;
-        border-radius:10px;
-        padding-top: 12px;
-        padding-bottom: 42px;
-        min-height: 500px;
-        height: auto;
-        width: auto;
-        min-width: 420px;
-        background: rgb(0,0,0);
-        background: linear-gradient(190deg, pink, #512DA8);
-        color:white;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin-bottom: 90px;
-        box-shadow: 3px 3px 5px  #1A1A1A;
-    } 
     .icon-center {
         display: block;
         margin: auto;

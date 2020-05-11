@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+@keyframes cloudMovement{
+    from{margin-left: -55px;}
+    to{ margin-left: 65px;}
+}
 .cloud{
     color: white;
-    filter: drop-shadow(1px 1px 5px white);
-    
+    filter: drop-shadow(1px 1px 5px white);    
 }
  body{
      background-image: url("./assets/jeremy-bishop-GNgB1KtBRJM-unsplash.jpg");
@@ -20,13 +25,6 @@ a, button, input{
 }
 a:hover{
     text-decoration-color: white;
-}
-button{
-    margin-top: 9px;
-    margin-bottom: 9px;
-    background-color: #512DA8;
-    color: white;
-    outline: 0 none;
 }
 input{
     opacity: 0.5;
