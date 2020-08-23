@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+*{
+    box-sizing: border-box;
+}
 
 @keyframes cloudMovement{
     from{margin-left: -55px;}
@@ -15,6 +17,9 @@
      background-repeat: no-repeat;
      background-image: cross-fade(0.6);
      background-size: cover;
+      font-family: sans-serif;
+      min-height: 100vh;
+      margin: 0;
      -o-background-size: cover;
      -webkit-background-size: cover;
      -moz-background-size: cover;
